@@ -141,10 +141,6 @@ Alternatively you can build the image locally.
 ```bash
 docker build -t sameersbn/gitlab github.com/lidalao/docker-gitlab
 ```
-build for arm64
-```bash
-docker buildx build --platform linux/arm64 -t sameersbn/gitlab github.com/lidalao/docker-gitlab
-```
 
 ## Quick Start
 
