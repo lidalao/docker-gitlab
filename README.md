@@ -141,7 +141,17 @@ Alternatively you can build the image locally.
 ```bash
 docker build -t sameersbn/gitlab github.com/lidalao/docker-gitlab
 ```
+## Fix on postgrs above 15.+
+```bash
+root@gitlab-postgresql-6b74546cd5-9n2gl:/var/lib/postgresql# psql -h localhost -U postgres -d gitlabhq_production -W
+Password: postgres
+psql (15.3 (Ubuntu 15.3-1.pgdg22.04+1))
+Type "help" for help.
 
+gitlab_production=# GRANT ALL ON SCHEMA public TO gitlab;
+GRANT
+gitlab_production=# \q
+```
 ## Quick Start
 
 The quickest way to get started is using [docker-compose](https://docs.docker.com/compose/).
